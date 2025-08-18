@@ -13,3 +13,5 @@ dotnet ef database drop -p Persistence -s API
 git reset head^
 git push origin +main
 git push origin --force
+
+Ctrl + . để tạo field tự động
