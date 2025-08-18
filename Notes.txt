@@ -15,3 +15,5 @@ git push origin +main
 git push origin --force
 
 Ctrl + . để tạo field tự động
+
+https://ohmyz.sh/
