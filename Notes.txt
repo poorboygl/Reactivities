@@ -1,0 +1,6 @@
+ch02
+dotnet new sln
+dotnet new webapi -n API -controllers
+dotnet new classlib -n Domain
+dotnet new classlib -n Application
+dotnet new classlib -n Persistence
