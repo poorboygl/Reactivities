@@ -4,3 +4,12 @@ dotnet new webapi -n API -controllers
 dotnet new classlib -n Domain
 dotnet new classlib -n Application
 dotnet new classlib -n Persistence
+dotnet tool install --global dotnet-ef --version 9.0.0
+dotnet ef
+dotnet ef migrations add InitialCreate -p Persistence -s API
+dotnet ef database update -p Persistence -s API
+dotnet ef database drop -p Persistence -s API
+
+git reset head^
+git push origin +main
+git push origin --force
