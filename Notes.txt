@@ -33,3 +33,7 @@ npm install -g npm@11.5.2
 npm run dev
 
 https://transform.tools/json-to-typescript
+
+react dev tool
+
+https://chromewebstore.google.com/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?pli=1
