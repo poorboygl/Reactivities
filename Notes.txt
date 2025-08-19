@@ -17,3 +17,7 @@ git push origin --force
 Ctrl + . để tạo field tự động
 
 https://ohmyz.sh/
+
+ch03
+
+Ctrl + Shift + P show all comment
