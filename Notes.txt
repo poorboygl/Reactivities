@@ -21,3 +21,13 @@ https://ohmyz.sh/
 ch03
 
 Ctrl + Shift + P show all comment
+
+npm create vite@latest
+y
+client
+
+react
+typeScript + SWC
+npm install -g npm@11.5.2
+
+npm run dev
