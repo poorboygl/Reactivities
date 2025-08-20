@@ -48,3 +48,6 @@ npm install -D vite-plugin-mkcert
 
 https://axios-http.com/
 npm install axios
+
+ch04
+event Sourcing: https://www.youtube.com/watch?v=JHGkaShoyNs
