@@ -3,9 +3,10 @@ import { Button, Card, CardActions, CardContent, CardMedia, Typography } from "@
 type Props = {
         activity : Activity
         cancelSelectActivity: () => void
+        openForm: (id?: string) => void
     }
 
-export default function ActivityDetail({activity, cancelSelectActivity}: Props) {
+export default function ActivityDetail({activity, cancelSelectActivity, openForm}: Props) {
   return (
     <Card sx={{borderRadius: 3}}>
         <CardMedia 
@@ -18,8 +19,8 @@ export default function ActivityDetail({activity, cancelSelectActivity}: Props) 
             <Typography variant='body1'>{activity.description}</Typography>
         </CardContent>
         <CardActions>
-            <Button color='primary'>Edit</Button>
-            <Button onClick={() => (cancelSelectActivity())} color='inherit'>Cancel</Button>
+            <Button onClick={() => openForm(activity.id)} color='primary'>Edit</Button>
+            <Button onClick={cancelSelectActivity} color='inherit'>Cancel</Button>
         </CardActions>
     </Card>
   )
