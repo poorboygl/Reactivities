@@ -28,17 +28,7 @@ function App() {
     setEditMode(false);
   }
 
-  const handleFormSubmit = (activity: Activity) => {
-    // if(activity.id){
-    //   setActivities(activities.map(x => x.id === activity.id ? activity : x));
-    // } else {
-    //   const newActivity = {...activity, id: (activities.length + 1).toString()};
-    //   setSelectedActivity(newActivity);
-    //   setActivities([...activities, newActivity]);
-    // }
-    console.log(activity);
-    setEditMode(false);
-  }
+
 
   const handleDeleteActivity = (id: string) => {
       console.log(id);
@@ -60,7 +50,6 @@ function App() {
             editMode={editMode}
             openForm={handleOpenForm}
             closeForm={handleFormClose}
-            submitForm={handleFormSubmit}
             deleteActivity={handleDeleteActivity}
           />
         )}
