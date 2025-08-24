@@ -52,5 +52,10 @@ npm install axios
 ch04
 event Sourcing: https://www.youtube.com/watch?v=JHGkaShoyNs
 
-ch07
+ch05
 npm install vite --save-dev
+
+ch06
+https://tanstack.com/query/latest/docs/framework/react/installation
+npm i @tanstack/react-query
+
