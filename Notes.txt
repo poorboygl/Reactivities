@@ -59,3 +59,6 @@ ch06
 https://tanstack.com/query/latest/docs/framework/react/installation
 npm i @tanstack/react-query
 npm i @tanstack/react-query-devtools
+
+tại sao deleteActivity sao có .mutate
+tại sao deleteActivity lại có isPending
