@@ -95,3 +95,6 @@ Hoặc bôi đen → Ctrl + Shift + L để chọn tất cả occurrence trong f
 Sau đó gõ text mới, tất cả sẽ thay đổi cùng lúc.
 
 npm install react-calendar
+
+https://date-fns.org/docs/Getting-Started
+npm install date-fns 
