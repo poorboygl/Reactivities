@@ -66,3 +66,30 @@ tại sao deleteActivity lại có isPending
 ch07
 https://reactrouter.com/
 npm i react-router
+
+ch08
+🔹 1. Tìm và thay thế (Find & Replace)
+
+Trong file hiện tại:
+
+Nhấn Ctrl + H (Windows/Linux) hoặc Cmd + Option + F (Mac).
+
+Nhập từ cần tìm ở ô Find.
+
+Nhập nội dung mới ở ô Replace.
+
+Dùng Replace All (Alt + Enter) để thay tất cả.
+
+Trong toàn bộ project/thư mục:
+
+Nhấn Ctrl + Shift + H (Windows/Linux) hoặc Cmd + Shift + H (Mac).
+
+Thao tác tương tự nhưng thay thế trên tất cả file.
+
+🔹 3. Multi-cursor (chỉnh sửa nhiều chỗ cùng lúc)
+
+Chọn text cần thay đổi → nhấn Ctrl + D nhiều lần để chọn thêm những chỗ giống nhau.
+
+Hoặc bôi đen → Ctrl + Shift + L để chọn tất cả occurrence trong file.
+
+Sau đó gõ text mới, tất cả sẽ thay đổi cùng lúc.
