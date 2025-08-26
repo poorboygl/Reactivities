@@ -93,3 +93,5 @@ Chọn text cần thay đổi → nhấn Ctrl + D nhiều lần để chọn th�
 Hoặc bôi đen → Ctrl + Shift + L để chọn tất cả occurrence trong file.
 
 Sau đó gõ text mới, tất cả sẽ thay đổi cùng lúc.
+
+npm install react-calendar
