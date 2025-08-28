@@ -12,5 +12,6 @@ public class MappingProfiles : Profile
         // Map from and Map to
         CreateMap<Activity, Activity>();
         CreateMap<CreateActivityDto, Activity>();
+        CreateMap<EditActivityDto, Activity>();
     }
 }
