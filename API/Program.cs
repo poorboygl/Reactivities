@@ -1,3 +1,4 @@
+using API.Middleware;
 using Application.Activities.Queries;
 using Application.Activities.Validators;
 using Application.Core;
@@ -23,13 +24,14 @@ builder.Services.AddMediatR(
     });
 builder.Services.AddAutoMapper(typeof(MappingProfiles).Assembly);
 builder.Services.AddValidatorsFromAssemblyContaining<CreateActivityValidator>();
+builder.Services.AddTransient<ExceptionMiddleware>();
    
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 
-app.MapControllers();
+app.UseMiddleware<ExceptionMiddleware>();
 
 app.UseCors(builder =>
 {
@@ -37,6 +39,7 @@ app.UseCors(builder =>
            .AllowAnyHeader()
            .AllowAnyMethod();
 });
+app.MapControllers();
 
 using var scope = app.Services.CreateScope();
 var services = scope.ServiceProvider;
