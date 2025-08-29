@@ -46,7 +46,7 @@ agent.interceptors.response.use(
                 router.navigate('/not-found');
                 break;
             case 500:
-                toast.error('Internal Server Error');
+                router.navigate('/server-error', {state: {error: data}});
                 break;
             default:
                 toast.error('Unknown Error');
