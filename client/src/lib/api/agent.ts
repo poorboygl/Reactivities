@@ -26,10 +26,18 @@ agent.interceptors.response.use(
     async error => {
         await sleep(1000)
         store.uiStore.isIdle()
-        const { status} = error.response;
+        const { status, data} = error.response;
         switch (status){
             case 400:
-                toast.error('Bad Request');
+               if(data.errors){
+                   const modalStateErrors = [];
+                   for(const key in data.errors){
+                       modalStateErrors.push(data.errors[key]);
+                   }
+                   throw modalStateErrors.flat();
+               } else {
+                toast.error(data);
+               }
                 break;
             case 401:
                 toast.error('Unauthorized');
