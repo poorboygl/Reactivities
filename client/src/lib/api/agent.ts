@@ -1,6 +1,7 @@
 import axios from "axios";
 import { store } from "../stores/store";
 import { toast } from "react-toastify";
+import { router } from "../../app/router/Routes";
 
 const sleep = (delay: number) => {
   return new Promise(resolve => setTimeout(resolve, delay));
@@ -34,7 +35,7 @@ agent.interceptors.response.use(
                 toast.error('Unauthorized');
                 break;
             case 404:
-                toast.error('Not Found');
+                router.navigate('/not-found');
                 break;
             case 500:
                 toast.error('Internal Server Error');
