@@ -105,3 +105,8 @@ npm install mobx mobx-react-lite
 
 ch10
 npm install react-toastify
+
+ch11
+https://react-hook-form.com/
+npm install react-hook-form
+npm install @hookform/resolvers zod
