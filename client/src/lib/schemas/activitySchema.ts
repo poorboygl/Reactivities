@@ -6,7 +6,9 @@ export const activitySchema =  z.object({
     title: requiredString('Title'),
     description: requiredString('Description'),
     category: requiredString('Category'),
-    date: requiredString('Category'),
+    date: z.date().nullable().refine(d => d !== null, {
+        message: "Date is required",
+    }),
     city: requiredString('City'),
     venue: requiredString('Venue')
 })

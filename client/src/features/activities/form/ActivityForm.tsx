@@ -8,6 +8,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import TextInput from "../../../app/shared/components/TextInput";
 import SelectInput from "../../../app/shared/components/SelectInput";
 import { categoryOptions } from "./categoryOptions";
+import DateTimeInput from "../../../app/shared/components/DateTimeInput";
+import { parseISO } from "date-fns";
 
 export default function ActivityForm() {
   const {  control, reset, handleSubmit } = useForm<ActivitySchema>({
@@ -17,7 +19,7 @@ export default function ActivityForm() {
       title: "",
       description: "",
       category: "",
-      date: "",
+      date:  null as unknown as Date,
       city: "",
       venue: ""
   }
@@ -27,7 +29,10 @@ export default function ActivityForm() {
 
   useEffect(() => {
     if(activity) {
-      reset(activity);
+      reset({
+      ...activity,
+      date: parseISO(activity.date), // convert string -> Date
+      });
     }
   }, [activity, reset]);
 
@@ -47,7 +52,7 @@ export default function ActivityForm() {
             <TextInput label = 'Title' control = {control} name='title'/>
             <TextInput label = 'Description' control = {control} name='description'/>
             <SelectInput items={categoryOptions} label = 'Category' control = {control} name='category'/>
-            <TextInput label = 'Date' control = {control} name='date'/>
+            <DateTimeInput  label = 'Date' control = {control} name='date'/>
             <TextInput label = 'City' control = {control} name='city'/>
             <TextInput label = 'Venue' control = {control} name='venue'/>
             <Box display='flex' justifyContent='end' gap={3}>
