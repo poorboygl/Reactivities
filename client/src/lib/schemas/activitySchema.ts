@@ -2,19 +2,26 @@ import {z} from 'zod';
 
 const requiredString = (fieldName: string) => z.string().min(1, { message: `${fieldName} is required` });
 
-export const activitySchema =  z.object({
+export const activitySchema = (isEdit:boolean) => z.object({
     title: requiredString('Title'),
     description: requiredString('Description'),
     category: requiredString('Category'),
-    date: z.date().nullable().refine(d => d !== null, {
-    message: "Date is required",
-    }),
+    date: (z.preprocess((arg) => {
+        if (typeof arg === "string" && arg !== "") return new Date(arg);
+        return arg;
+      }, z.date().nullable())
+        .refine((d) => d !== null, { message: "Date is required" })
+    //! Alert Date must be in the future
+      .refine((d) => {
+        if (!d) return false;
+        return isEdit ? true : d > new Date(); // 👈 nếu edit thì bỏ qua check future
+      }, { message: "Date must be in the future" })) as unknown as Date,
     location: z.object({
         venue: requiredString('Venue'),
         city: z.string().optional(),
-        latitude: z.coerce.number(),
-        longitude: z.coerce.number()
+        latitude: z.coerce.number() as unknown as number,
+        longitude: z.coerce.number() as unknown as number
     }).partial()
 })
 
-export type ActivitySchema = z.infer<typeof activitySchema>;
+export type ActivitySchema =  z.infer<ReturnType<typeof activitySchema>>;
