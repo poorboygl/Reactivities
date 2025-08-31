@@ -9,7 +9,6 @@ import TextInput from "../../../app/shared/components/TextInput";
 import SelectInput from "../../../app/shared/components/SelectInput";
 import { categoryOptions } from "./categoryOptions";
 import DateTimeInput from "../../../app/shared/components/DateTimeInput";
-import { parseISO } from "date-fns";
 
 export default function ActivityForm() {
   const {  control, reset, handleSubmit } = useForm<ActivitySchema>({
@@ -19,7 +18,7 @@ export default function ActivityForm() {
       title: "",
       description: "",
       category: "",
-      date:  null as unknown as Date,
+      date: null,
       city: "",
       venue: ""
   }
@@ -29,10 +28,7 @@ export default function ActivityForm() {
 
   useEffect(() => {
     if(activity) {
-      reset({
-      ...activity,
-      date: parseISO(activity.date), // convert string -> Date
-      });
+      reset(activity);
     }
   }, [activity, reset]);
 
