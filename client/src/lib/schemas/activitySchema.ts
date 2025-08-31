@@ -9,8 +9,12 @@ export const activitySchema =  z.object({
     date: z.date().nullable().refine(d => d !== null, {
     message: "Date is required",
     }),
-    city: requiredString('City'),
-    venue: requiredString('Venue')
+    location: z.object({
+        venue: requiredString('Venue'),
+        city: z.string().optional(),
+        latitude: z.coerce.number(),
+        longitude: z.coerce.number()
+    })
 })
 
 export type ActivitySchema = z.infer<typeof activitySchema>;
