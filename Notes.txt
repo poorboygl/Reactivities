@@ -117,3 +117,9 @@ npm install date-fns
 
 https://locationiq.com/
 pk.a1108e62cd71cdeae899573cf6f83508
+
+https://leafletjs.com/
+https://react-leaflet.js.org/
+
+npm install leaflet react-leaflet
+npm install -D @types/leaflet
