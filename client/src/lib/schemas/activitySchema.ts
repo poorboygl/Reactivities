@@ -14,7 +14,7 @@ export const activitySchema =  z.object({
         city: z.string().optional(),
         latitude: z.coerce.number(),
         longitude: z.coerce.number()
-    })
+    }).partial()
 })
 
 export type ActivitySchema = z.infer<typeof activitySchema>;

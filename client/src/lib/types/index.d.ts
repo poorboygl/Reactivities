@@ -32,6 +32,8 @@ export type LocationIQAddress = {
   house_number: string
   road: string
   suburb?: string
+  town?:string
+  village?: string
   city: string
   country: string
   state: string

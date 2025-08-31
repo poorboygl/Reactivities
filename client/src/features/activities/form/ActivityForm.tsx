@@ -12,7 +12,7 @@ import DateTimeInput from "../../../app/shared/components/DateTimeInput";
 import LocationInput from "../../../app/shared/components/LocationInput";
 
 export default function ActivityForm() {
-  const {  control, reset, handleSubmit } = useForm<ActivitySchema>({
+  const {  control, reset, handleSubmit } = useForm({
       mode: 'onTouched',
       resolver: zodResolver(activitySchema),
       defaultValues: {
@@ -20,7 +20,12 @@ export default function ActivityForm() {
       description: "",
       category: "",
       date: null,
-      location:{},
+      location: {
+        venue: "",
+        city: "",
+        latitude: 0,
+        longitude: 0
+      }
   }
   });
   const {id} = useParams();
@@ -50,8 +55,8 @@ export default function ActivityForm() {
             <SelectInput items={categoryOptions} label = 'Category' control = {control} name='category'/>
             <LocationInput control ={control} label="Enter the location" name="location"/>
             <DateTimeInput  label = 'Date' control = {control} name='date'/>
-            <TextInput label = 'City' control = {control} name='city'/>
-            <TextInput label = 'Venue' control = {control} name='venue'/>
+            <TextInput label = 'City' control = {control} name='location.city'/>
+            <TextInput label = 'Venue' control = {control} name='location.venue'/>
             <Box display='flex' justifyContent='end' gap={3}>
                 <Button color='inherit'>Cancel</Button>
                 <Button 
