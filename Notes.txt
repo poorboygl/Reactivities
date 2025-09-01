@@ -123,3 +123,6 @@ https://react-leaflet.js.org/
 
 npm install leaflet react-leaflet
 npm install -D @types/leaflet
+
+ch12
+dotnet ef migrations add IdentityAdded -p Persistence -s API
