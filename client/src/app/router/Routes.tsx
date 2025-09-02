@@ -8,6 +8,7 @@ import Counter from "../../features/counter/Counter";
 import TestErrors from "../errors/TestErrors";
 import NotFound from "../errors/NotFound";
 import ServerError from "../errors/ServerError";
+import LoginForm from "../../features/account/LoginForm";
 
 export const router = createBrowserRouter([
     {
@@ -23,6 +24,7 @@ export const router = createBrowserRouter([
             {path: 'errors', element: <TestErrors />},
             {path: 'not-found', element: <NotFound />},
             {path: 'server-error', element: <ServerError />},
+            {path: 'login', element: <LoginForm />},
             {path: '*', element: <Navigate replace to='/not-found' /> },
         ]
     }
