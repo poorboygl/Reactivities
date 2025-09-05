@@ -126,3 +126,9 @@ npm install -D @types/leaflet
 
 ch12
 dotnet ef migrations add IdentityAdded -p Persistence -s API
+
+ch14 
+dotnet ef migrations add ActivityAttendeesAdded -p Persistence -s API
+dotnet tool update dotnet-ef -g
+
+dotnet ef migrations remove  -p Persistence -s API
