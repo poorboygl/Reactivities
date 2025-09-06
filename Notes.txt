@@ -132,3 +132,7 @@ dotnet ef migrations add ActivityAttendeesAdded -p Persistence -s API
 dotnet tool update dotnet-ef -g
 
 dotnet ef migrations remove  -p Persistence -s API
+
+dotnet new classlib -n Infrastructure
+
+dotnet sln add Infrastructure
