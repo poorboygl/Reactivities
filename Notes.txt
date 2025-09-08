@@ -136,3 +136,5 @@ dotnet ef migrations remove  -p Persistence -s API
 dotnet new classlib -n Infrastructure
 
 dotnet sln add Infrastructure
+
+dotnet ef database drop -p Persistence -s API
