@@ -138,3 +138,6 @@ dotnet new classlib -n Infrastructure
 dotnet sln add Infrastructure
 
 dotnet ef database drop -p Persistence -s API
+
+WE use our Infrastructure project for anything that'kind outside of our application logic
+So our application layer needs to know nothing about authentication to be able to get a user'username
