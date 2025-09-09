@@ -18,6 +18,9 @@ export const useAccount = () => {
             await queryClient.invalidateQueries({
                 queryKey: ['user']
             });
+            toast.success('Login successful');
+            navigate('/activities');
+
         }
     });
 
@@ -38,6 +41,7 @@ export const useAccount = () => {
         onSuccess: () => {
             queryClient.removeQueries({queryKey:['user']})
             queryClient.removeQueries({queryKey:['activities']})
+            toast.info('You have been logged out');
             navigate('/');
         }
     })
