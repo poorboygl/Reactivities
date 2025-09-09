@@ -15,7 +15,16 @@ export const useActivities = (id? : string) => {
       const response = await agent.get<Activity[]>('/activities');
       return response.data;
     },
-    enabled: !id && location.pathname === '/activities' && !!currentUser
+    enabled: !id && location.pathname === '/activities' && !!currentUser,
+    select: data => {
+      return data.map(activity => {
+        return {
+          ...activity,
+          isHost: currentUser?.id === activity.hostId,
+          isGoing: activity.attendees.some(a => a.id === currentUser?.id)
+        }
+      })
+    }
   });
 
   const {data: activity, isLoading: isLoadingActivity} = useQuery({
@@ -24,8 +33,15 @@ export const useActivities = (id? : string) => {
         const response = await agent.get<Activity>(`/activities/${id}`);
         return response.data;
       },
-      enabled: !!id && !! currentUser
       // !!id means the query will only run if id is truthy
+      enabled: !!id && !! currentUser,
+      select: data => {
+        return {
+          ...data,
+          isHost: currentUser?.id === data.hostId,
+          isGoing: data.attendees.some(a => a.id === currentUser?.id)
+        }
+      }
   })
 
   const updateActivity = useMutation({
