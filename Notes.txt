@@ -144,3 +144,9 @@ So our application layer needs to know nothing about authentication to be able t
 
 ch15
 https://mui.com/material-ui/customization/creating-themed-components/
+
+ch16
+https://cloudinary.com/
+dup4rmzt7
+118359566945398
+EwslzofIKwbdmwYlP9jHcKjnYz4
