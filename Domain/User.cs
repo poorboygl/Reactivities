@@ -9,5 +9,7 @@ public class User : IdentityUser
     public string? ImageUrl { get; set; }
 
     //navigation properties
-   public ICollection<ActivityAttendee> Activities { get; set; } = [];
+    public ICollection<ActivityAttendee> Activities { get; set; } = [];
+   
+    public ICollection<Photo> Photos { get; set; } = [];
 }

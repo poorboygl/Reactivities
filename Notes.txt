@@ -150,3 +150,5 @@ https://cloudinary.com/
 dup4rmzt7
 118359566945398
 EwslzofIKwbdmwYlP9jHcKjnYz4
+
+dotnet ef migrations add PhotoEntityAdded -p Persistence -s API  
