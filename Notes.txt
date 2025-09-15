@@ -155,3 +155,7 @@ dotnet ef migrations add PhotoEntityAdded -p Persistence -s API
 
 ch17
 https://mui.com/material-ui/react-image-list/
+
+https://react-dropzone.js.org/
+
+npm install --save react-dropzone
