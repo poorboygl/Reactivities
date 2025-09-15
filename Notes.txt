@@ -159,3 +159,6 @@ https://mui.com/material-ui/react-image-list/
 https://react-dropzone.js.org/
 
 npm install --save react-dropzone
+https://www.npmjs.com/package/react-cropper
+
+npm install react-cropper
