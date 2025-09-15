@@ -1,11 +1,16 @@
 import { CloudUpload } from "@mui/icons-material";
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Button, Grid, Typography } from "@mui/material";
 import { useCallback, useRef, useState } from "react";
 import {useDropzone} from 'react-dropzone'
 import  { type ReactCropperElement, Cropper } from "react-cropper";
 import "cropperjs/dist/cropper.css";
 
-export default function PhotoUploadWidget() {
+type Props = {
+    uploadPhoto: (file: Blob) => void;
+    loading: boolean;
+}
+
+export default function PhotoUploadWidget({uploadPhoto, loading}: Props) {
     const [files, setfiles] = useState<File[]>([]);
     const cropperRef = useRef<ReactCropperElement>(null);
 
@@ -13,7 +18,17 @@ export default function PhotoUploadWidget() {
             setfiles(acceptedFiles.map(file => Object.assign(file, {
                 preview: URL.createObjectURL(file)
             })));
-        }, [])
+        }, []);
+
+    const onCrop = useCallback(() =>{
+        const cropper = cropperRef.current?.cropper;
+        cropper?.getCroppedCanvas().toBlob(blob => {
+            if(blob){
+                uploadPhoto(blob);
+            }
+        });
+    }, [uploadPhoto])
+
     const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
   return (
     <Grid container spacing={3}>
@@ -46,6 +61,7 @@ export default function PhotoUploadWidget() {
                     guides={false}
                     viewMode={1}
                     background={false}
+                    ref ={cropperRef}
                 />
             }
         </Grid>
@@ -57,6 +73,15 @@ export default function PhotoUploadWidget() {
                         className="img-preview"
                         style={{width: '100%', height: 300, overflow: 'hidden'}}
                      />
+                     <Button
+                        sx = {{mt:2}}
+                        onClick={onCrop}
+                        variant="contained"
+                        color='secondary'
+                        disabled={loading}
+                     >
+                         {loading ? 'Uploading...' : 'Upload'}
+                     </Button>
                 </>
             }
           
