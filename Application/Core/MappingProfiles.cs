@@ -31,5 +31,7 @@ public class MappingProfiles : Profile
             .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.User.Id));
 
         CreateMap<User, UserProfile>();
+
+        CreateMap<Activity, UserActivityDto>();
     }
 }
