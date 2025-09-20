@@ -162,3 +162,6 @@ npm install --save react-dropzone
 https://www.npmjs.com/package/react-cropper
 
 npm install react-cropper
+
+ch19
+dotnet ef migrations add CommentEntityAdded -p Persistence -s API
