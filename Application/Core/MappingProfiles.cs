@@ -33,5 +33,10 @@ public class MappingProfiles : Profile
         CreateMap<User, UserProfile>();
 
         CreateMap<Activity, UserActivityDto>();
+
+        CreateMap<Comment, CommentDto>()
+            .ForMember(dest => dest.DisplayName, opt => opt.MapFrom(src => src.User.DisplayName))
+            .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.User.Id))
+            .ForMember(dest => dest.ImageUrl, opt => opt.MapFrom(src => src.User.ImageUrl));
     }
 }
