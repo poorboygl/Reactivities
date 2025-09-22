@@ -165,3 +165,7 @@ npm install react-cropper
 
 ch19
 dotnet ef migrations add CommentEntityAdded -p Persistence -s API
+
+npm install @microsoft/signalr
+
+https://mobx.js.org/react-integration.html
