@@ -6,7 +6,7 @@ export function formatDate(date: DateArg<Date>) {
 }
 
 export function timeAgo(date: DateArg<Date>){
-  return formatDistanceToNow(date) + 'ago'
+  return formatDistanceToNow(date) + ' ago'
 }
 
 

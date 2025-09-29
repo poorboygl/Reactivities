@@ -38,7 +38,7 @@ type User = {
 
 type ChatComment = {
   id: string
-  createAt: Date
+  createdAt: Date
   body: string
   userId: string
   displayName: string

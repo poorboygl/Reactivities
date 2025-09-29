@@ -15,11 +15,8 @@ const ActivityDetailsChat = observer( function ActivityDetailsChat() {
             await commentStore.hubConnection?.invoke('SendComment', {
                 activityId : id,
                 body: data.body
-            });
-            commentStore.comments.map( comment => {
-                console.log("createAt", timeAgo(comment.createAt))
-            })
-           
+            });       
+            reset();
 
         } catch (error) {
             console.log(error);
@@ -81,7 +78,7 @@ const ActivityDetailsChat = observer( function ActivityDetailsChat() {
                                         </Typography>
                                         <Typography variant="body2" color="textSecondary">
 
-                                            {/* {timeAgo(comment.createAt)} */}
+                                            {timeAgo(comment.createdAt)}
                                         </Typography>
                                     </Box>  
                                     <Typography sx={{ whiteSpace: 'pre-wrap' }}>{comment.body}</Typography>
