@@ -169,3 +169,7 @@ dotnet ef migrations add CommentEntityAdded -p Persistence -s API
 npm install @microsoft/signalr
 
 https://mobx.js.org/react-integration.html
+
+ch20 
+dotnet ef database drop -p Persistence -s API
+dotnet ef migrations add FollowerEntityAdded -p Persistence -s API
