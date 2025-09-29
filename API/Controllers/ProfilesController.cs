@@ -1,4 +1,5 @@
 using System;
+using System.Linq.Expressions;
 using Application.Profiles.Commands;
 using Application.Profiles.Queries;
 using Domain;
@@ -48,5 +49,11 @@ public class ProfilesController : BaseApiController
     public async Task<ActionResult> UpdateProfile(EditProfile.Command command)
     {
         return HandleResult(await Mediator.Send(command));
+    }
+
+    [HttpPost("{userId}/follow")]
+    public async Task<ActionResult> FollowToggle(string userId)
+    {
+        return HandleResult(await Mediator.Send(new FollowToggle.Command { TargetUserId = userId })); 
     }
 }
