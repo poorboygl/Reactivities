@@ -173,3 +173,5 @@ https://mobx.js.org/react-integration.html
 ch20 
 dotnet ef database drop -p Persistence -s API
 dotnet ef migrations add FollowerEntityAdded -p Persistence -s API
+
+dotnet ef migrations script -o test.sql -p Persistence -s API
