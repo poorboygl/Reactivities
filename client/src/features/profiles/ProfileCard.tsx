@@ -12,7 +12,7 @@ export default function ProfileCard({ profile }: Props) {
         <Card sx = {{
                     borderRadius: 3, 
                     p: 3, 
-                    maxWidth: 300, 
+                    maxWidth: 250, 
                     textDecoration: 'none'
                     }} 
                 elevation={4}
@@ -47,7 +47,7 @@ export default function ProfileCard({ profile }: Props) {
             <Box sx={{display: 'flex',alignItems: 'center', justifyContent: 'start'}}>
                     <Person/>
                     <Typography  sx={{ml:1}}>
-                        {profile.followersCount}
+                        {profile.followersCount} followers
                     </Typography>
             </Box>
         </Card>

@@ -33,7 +33,7 @@ public class GetFollowings
                                                 new { currentUserId = userAccessor.GetUserId()})
                                     .ToListAsync(cancellationToken);
                     break;
-                case "Followings":
+                case "followings":
                     profiles = await context.UserFollowings.Where(x => x.ObserverId == request.UserId)
                                         .Select(x => x.Target)
                                         .ProjectTo<UserProfile>(mapper.ConfigurationProvider,
