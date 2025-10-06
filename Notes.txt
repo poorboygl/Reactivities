@@ -183,3 +183,6 @@ https://download2.easeus.com/video_downloader.php.
 ch21 
 after [Index(nameof(Date))]
 dotnet ef migrations add DateIndexAdded -p Persistence -s API
+
+https://www.npmjs.com/package/react-intersection-observer
+npm install react-intersection-observer --save
