@@ -186,3 +186,6 @@ dotnet ef migrations add DateIndexAdded -p Persistence -s API
 
 https://www.npmjs.com/package/react-intersection-observer
 npm install react-intersection-observer --save
+
+ch22
+npm run build

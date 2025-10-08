@@ -12,6 +12,7 @@
 *.db-journal
 *.db-wal
 *.db-shm
+API/wwwroot/
 
 # Build results
 [Dd]ebug/
