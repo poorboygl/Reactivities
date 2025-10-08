@@ -75,9 +75,18 @@ app.UseCors(builder =>
 app.UseAuthentication();
 app.UseAuthorization();
 
+// Configure static files to be served from wwwroot
+app.UseDefaultFiles();
+// Enable serving static files
+app.UseStaticFiles();
+
+
 app.MapControllers();
 app.MapGroup("api").MapIdentityApi<User>(); //api/login
 app.MapHub<CommentHub>("/comments");
+
+// Fallback route to serve index.html for client-side routing
+app.MapFallbackToController("Index", "Fallback");
 
 using var scope = app.Services.CreateScope();
 var services = scope.ServiceProvider;
