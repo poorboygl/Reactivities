@@ -189,3 +189,4 @@ npm install react-intersection-observer --save
 
 ch22
 npm run build
+docker compose up -d
