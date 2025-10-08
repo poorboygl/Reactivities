@@ -190,3 +190,9 @@ npm install react-intersection-observer --save
 ch22
 npm run build
 docker compose up -d
+Reactivities> dotnet ef database drop -p Persistence -s API
+delete Migrations
+Reactivities> dotnet restore
+
+ dotnet ef migrations add InitialSql -p Persistence -s API
+ dotnet ef migrations  remove -p Persistence -s API
