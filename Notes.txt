@@ -196,3 +196,5 @@ Reactivities> dotnet restore
 
  dotnet ef migrations add InitialSql -p Persistence -s API
  dotnet ef migrations  remove -p Persistence -s API
+
+ dotnet publish -c Release -o ./bin/Publish
