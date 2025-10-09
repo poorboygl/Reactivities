@@ -42,8 +42,8 @@ public class AccountController(SignInManager<User> signInManager,
     }
 
     [AllowAnonymous]
-    [HttpGet("resendConfirmationEmail")]
-    public async Task<ActionResult> ResendConfirmationEmail([FromQuery] string email)
+    [HttpGet("resendConfirmEmail")]
+    public async Task<ActionResult> ResendConfirmEmail([FromQuery] string email)
     {
         var user = await signInManager.UserManager.Users
                         .FirstOrDefaultAsync(x => x.Email == email);

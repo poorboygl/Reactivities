@@ -41,7 +41,7 @@ builder.Services.AddMediatR(
 builder.Services.AddHttpClient<ResendClient>();
 builder.Services.Configure<ResendClientOptions>(opt =>
 {
-    opt.ApiToken = builder.Configuration["ResendApiKey"]!;
+    opt.ApiToken = builder.Configuration["Resend:ApiToken"]!;
 });
 
 builder.Services.AddTransient<IResend, ResendClient>();

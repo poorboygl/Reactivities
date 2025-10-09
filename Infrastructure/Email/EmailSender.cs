@@ -23,7 +23,8 @@ public class EmailSender(IResend resend) : IEmailSender<User>
     {
         var message = new EmailMessage
         {
-            From = "whatever@resend.dev",
+            From = "onboarding@resend.dev",
+            To = "nguyenquocvu.16494@gmail.com",
             Subject = subject,
             HtmlBody = body,
         };
@@ -31,7 +32,7 @@ public class EmailSender(IResend resend) : IEmailSender<User>
         message.To.Add(email);
         Console.WriteLine(message.HtmlBody);
 
-        //await resend.EmailSendAsync(message);
+        await resend.EmailSendAsync(message);
         await Task.CompletedTask;
     }
 
