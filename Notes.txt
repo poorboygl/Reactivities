@@ -198,3 +198,8 @@ Reactivities> dotnet restore
  dotnet ef migrations  remove -p Persistence -s API
 
  dotnet publish -c Release -o ./bin/Publish
+
+ ch23
+ https://resend.com/
+ re_VybiwACf_E28UxMLDWDFdVvtzxBZUt71n
+ https://learn.microsoft.com/en-us/aspnet/core/security/authentication/identity-api-authorization?view=aspnetcore-9.0
