@@ -23,7 +23,7 @@ export default function LoginForm() {
 
     const handleResendEmail = async () => {
         try {
-            await resendEmailConfirm.mutateAsync(email);
+            await resendEmailConfirm.mutateAsync({email});
             setNotVerified(false);
             
         } catch (error) {

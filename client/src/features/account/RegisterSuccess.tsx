@@ -29,7 +29,7 @@ export default function RegisterSuccess({email}: Props) {
             <Typography gutterBottom variant="h3">
                 Please check your email to confirm account
             </Typography>
-            <Button fullWidth onClick={() => resendEmailConfirm.mutate(email)}>
+            <Button fullWidth onClick={() => resendEmailConfirm.mutate({email})}>
                 Re-send confirm email
             </Button>
         </Paper>
